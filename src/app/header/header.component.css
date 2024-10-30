@@ -1,0 +1,40 @@
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 90px;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space items evenly */
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #613aa5;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  header h1 {
+    font-size: 34px;
+    color: rgb(149, 227, 241);
+  }
+  
+  button {
+    background-color: #613aa5;
+    border-radius: 5px;
+    padding: 5px 10px; /* Adjust padding as needed */
+    border: none;
+    font-size: 16px; /* Adjust font size as needed */
+    color: bisque;
+    font-weight: bold;
+  }
+  
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: bisque;
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  

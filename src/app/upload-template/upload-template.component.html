@@ -1,0 +1,11 @@
+
+<h2>Upload File</h2>
+<input type="file" (change)="onFileSelected($event)" />
+<button (click)="onUpload()">Upload</button>
+
+<!-- <h3>Uploaded Files</h3>
+<ul>
+  <li *ngFor="let file of files">
+    <a [href]="file.filepath" target="_blank">{{ file.filename }}</a>
+  </li>
+</ul> -->
