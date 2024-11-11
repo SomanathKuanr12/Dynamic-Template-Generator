@@ -1,0 +1,93 @@
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .file-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .file-table th,
+  .file-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+  }
+  
+  .file-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .pagination-controls button {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .pagination-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* Increase modal width */
+.wide-modal {
+  max-width: 90%; /* Adjust percentage for desired width */
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Full-width input styling */
+.full-width-input {
+  width: 100%;
+}
+
+/* Small input style for form */
+.small-input {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.is-invalid {
+  border-color: red !important;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875rem;
+}
+.container {
+  position: relative; /* To allow positioning of the button relative to this container */
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;  /* Adjust the distance from the top */
+  right: 10px;  /* Adjust the distance from the right */
+  background: none;  /* Removes the background */
+  border: none;  /* Removes the border */
+  color: rgb(252, 248, 248);  /* Makes the "X" red */
+  font-size: 24px;  /* Adjust the size of the "X" */
+  cursor: pointer;  /* Changes cursor to a pointer on hover */
+  padding: 5px;  /* Adds some padding to make the button a bit larger */
+  font-weight: bold;  /* Makes the "X" bold */
+}
+
+.close-btn:hover {
+  opacity: 0.8;  /* Adds a hover effect */
+}
+
+
+  

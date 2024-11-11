@@ -1,0 +1,46 @@
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 90px;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Center content horizontally */
+  position: relative; /* Position to allow absolute positioning of button */
+}
+
+/* Header styles */
+header {
+  background-color: #613aa5;
+  color: #fff;
+  padding: 10px 0;
+}
+
+header h1 {
+  font-size: 34px;
+  color: rgb(149, 227, 241);
+  margin: 0 auto; /* Center the title */
+}
+
+/* Position the logout button on the right */
+#logout {
+  position: absolute;
+  right: 20px; /* Adjust distance from right edge */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  background-color: #613aa5;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  font-size: 16px;
+  color: bisque;
+  font-weight: bold;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: bisque;
+  font-size: 16px;
+}

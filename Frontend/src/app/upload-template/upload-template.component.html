@@ -1,0 +1,19 @@
+<div class="upload-container">
+  <h2>Upload File</h2>
+
+  <!-- Error message alert -->
+  <div class="alert alert-danger" role="alert" *ngIf="errMessage !== ''">
+    {{ errMessage }}
+  </div>
+
+  <!-- Success message alert -->
+  <div class="alert alert-info" role="alert" *ngIf="successMessage !== ''">
+    {{ successMessage }}
+  </div>
+
+  <!-- File input and upload button -->
+  <div class="form-group">
+    <input type="file" (change)="onFileSelected($event)" class="form-control" />
+  </div>
+  <button (click)="onUpload()" class="btn btn-primary btn-upload">Upload</button>
+</div>

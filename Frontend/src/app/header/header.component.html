@@ -1,0 +1,10 @@
+<header>
+  <div class="container">
+    <p></p>
+    <h1>Dynamic Template Generator</h1>
+    <!-- Show logout button only if the user is logged in -->
+    <button *ngIf="isLoggedIn" id="logout" (click)="onlogout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>  
+  </div>
+</header>

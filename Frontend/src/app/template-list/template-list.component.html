@@ -1,0 +1,99 @@
+<div class="container mt-4" *ngIf="!isPdf">
+    <!-- Search input -->
+    <div class="form-group">
+        <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Search files..." 
+            [(ngModel)]="searchTerm" 
+            (input)="loadFiles()" 
+        />
+    </div>
+<br>
+    <!-- Table to display files -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Action</th> <!-- Adding Action as a header -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let file of files">
+                <td>{{ file.filename }}</td>
+                <td>
+                    <button class="btn btn-info btn-sm" (click)="viewPdf(file.urlpath)">View</button> &nbsp; &nbsp;
+                    <button class="btn btn-warning btn-sm" (click)="openModal(file.filepath)">Generate</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div class="pagination justify-content-center mt-3">
+        <button class="btn btn-secondary" (click)="prevPage()" [disabled]="currentPage === 1"> << </button>
+        <span class="mx-2">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="btn btn-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages"> >> </button>
+    </div>
+</div>
+
+<div class="container mt-4" *ngIf="isPdf"> 
+    <button class="close-btn" (click)="onCloseView()">X</button>
+    <div class="pdf-container">
+        <iframe *ngIf="isPdf" [src]="selectedPdfUrl" width="100%" height="380vh"></iframe>
+    </div>
+</div>
+
+
+<div class="modal fade" #placeholderModal tabindex="-1" role="dialog" aria-labelledby="placeholderModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered wide-modal" role="document">
+        <div class="modal-content">
+            <div class="modal-header align-items-start">
+                <h5 class="modal-title" id="placeholderModalTitle">Placeholder List</h5>
+                
+            </div>
+
+            
+
+            <div class="modal-body">
+                <div class="row">
+                    <div *ngFor="let placeholder of placeholders" class="col-md-4 mb-4">
+                        <label>{{ formatPlaceholder(placeholder) }}</label>
+                        <input 
+                          type="text" 
+                          [id]="placeholder" 
+                          name="placeholder" 
+                          class="form-control full-width-input"
+                          [(ngModel)]="placeholdersValues[placeholder]" 
+                          [ngClass]="{'is-invalid': isSubmitted && isFieldInvalid(placeholder)}"
+                          required
+                        />
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Full-width alert messages -->
+             <div class="alert alert-danger w-100" role="alert" *ngIf="errMessage !== ''">
+                {{ errMessage }}
+            </div>
+            <div class="alert alert-info w-100" role="alert" *ngIf="successMessage !== ''">
+                {{ successMessage }}
+            </div>
+            <div class="modal-footer justify-content-between">
+                <!-- Save Button Centered -->
+                <div class="mx-auto">
+                    <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+                </div>
+                
+                <!-- Close Button on the Right -->
+                <button type="button" class="btn btn-danger" (click)="closeModal()">Close</button>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+

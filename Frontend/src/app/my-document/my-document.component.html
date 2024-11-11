@@ -1,0 +1,50 @@
+<div class="container mt-4" *ngIf="!isPdf">
+    <!-- Search input -->
+    <div class="form-group">
+        <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Search files..." 
+            [(ngModel)]="searchTerm" 
+            (input)="loadFiles()" 
+        />
+    </div>
+
+    <!-- Table to display files -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>File name</th>
+                <th>Action</th> <!-- Adding Action as a header -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let file of files">
+                <td>{{ file.filename }}</td>
+                <td>
+                    <button class="btn btn-info btn-sm" (click)="viewPdf(file.urlpath)">View</button> &nbsp; &nbsp;
+                    <button class="btn btn-warning btn-sm" (click)="onSelectDownload(file.urlpath)">Download</button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div class="pagination justify-content-center mt-3">
+        <button class="btn btn-secondary" (click)="prevPage()" [disabled]="currentPage === 1"> << </button>
+        <span class="mx-2">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="btn btn-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages"> >> </button>
+    </div>
+
+</div>
+
+<div class="container mt-4" *ngIf="isPdf"> 
+    <button class="close-btn" (click)="onCloseView()">X</button>
+    <div class="pdf-container">
+        <iframe *ngIf="isPdf" [src]="selectedPdfUrl" width="100%" height="380vh"></iframe>
+    </div>
+</div>
+
+
+  
+

@@ -1,0 +1,30 @@
+/* Center the container on the page */
+.upload-container {
+    max-width: 400px;
+    margin: auto 200px auto; /* Adjust margin-top to move it down */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Style form elements */
+  .upload-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .upload-container .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .upload-container .btn-upload {
+    width: 100%;
+    padding: 10px;
+  }
+  
